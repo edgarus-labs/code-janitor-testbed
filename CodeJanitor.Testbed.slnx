@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/Scenarios/Scenarios.csproj" />
+  <Project Path="src/Scenarios.Razor/Scenarios.Razor.csproj" />
+</Solution>

@@ -1,0 +1,3357 @@
+{
+  "scenarios": [
+    {
+      "id": "CsharpPreferredModifierOrder",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpPreferredModifierOrder/CsharpPreferredModifierOrder.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_preferred_modifier_order": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public static int Counter;"
+        },
+        {
+          "t": "contains",
+          "s": "private readonly int _seed = 1;"
+        }
+      ]
+    },
+    {
+      "id": "CsharpPreferStaticLocalFunction",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpPreferStaticLocalFunction/CsharpPreferStaticLocalFunction.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_prefer_static_local_function": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "static int Local(int y)"
+        }
+      ]
+    },
+    {
+      "id": "CsharpPreferStaticAnonymousFunction",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpPreferStaticAnonymousFunction/CsharpPreferStaticAnonymousFunction.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_prefer_static_anonymous_function": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "Func<int, int> twice = static y => y * 2;"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferReadonlyStruct",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferReadonlyStruct/CsharpStylePreferReadonlyStruct.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_readonly_struct": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public readonly struct ImmutablePoint"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferReadonlyStructMember",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferReadonlyStructMember/CsharpStylePreferReadonlyStructMember.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_readonly_struct_member": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public readonly int Current()"
+        },
+        {
+          "t": "contains",
+          "s": "public void Increment()"
+        }
+      ]
+    },
+    {
+      "id": "CsharpPreferBraces",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpPreferBraces/CsharpPreferBraces.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_prefer_braces": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "        if (open)\n        {\n            return 1;\n        }"
+        }
+      ]
+    },
+    {
+      "id": "CsharpPreferSimpleUsingStatement",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpPreferSimpleUsingStatement/CsharpPreferSimpleUsingStatement.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_prefer_simple_using_statement": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "using var stream = new MemoryStream(new byte[] { 7 });"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferMethodGroupConversion",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferMethodGroupConversion/CsharpStylePreferMethodGroupConversion.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_method_group_conversion": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "Func<int, int> convert = Double;"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleExpressionBodiedMethods",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleExpressionBodiedMethods/CsharpStyleExpressionBodiedMethods.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_expression_bodied_methods": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public int Method()\n    {\n        return _value + 1;\n    }"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleExpressionBodiedConstructors",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleExpressionBodiedConstructors/CsharpStyleExpressionBodiedConstructors.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_expression_bodied_constructors": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public CsharpStyleExpressionBodiedConstructors()\n    {\n        _value = 1;\n    }"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleExpressionBodiedOperators",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleExpressionBodiedOperators/CsharpStyleExpressionBodiedOperators.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_expression_bodied_operators": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public static Vector operator -(Vector left, Vector right)\n    {\n        return new Vector { X = left.X - right.X };"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleExpressionBodiedProperties",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleExpressionBodiedProperties/CsharpStyleExpressionBodiedProperties.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_expression_bodied_properties": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public int Property => _value;"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleExpressionBodiedIndexers",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleExpressionBodiedIndexers/CsharpStyleExpressionBodiedIndexers.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_expression_bodied_indexers": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public int this[int index] => _value + index;"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleExpressionBodiedAccessors",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleExpressionBodiedAccessors/CsharpStyleExpressionBodiedAccessors.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_expression_bodied_accessors": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "get => _value;"
+        },
+        {
+          "t": "contains",
+          "s": "set => _value = value;"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleExpressionBodiedLocalFunctions",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleExpressionBodiedLocalFunctions/CsharpStyleExpressionBodiedLocalFunctions.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_expression_bodied_local_functions": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "int Local(int x)\n        {\n            return x * 2;\n        }"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePatternMatchingOverIsWithCastCheck",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePatternMatchingOverIsWithCastCheck/CsharpStylePatternMatchingOverIsWithCastCheck.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_pattern_matching_over_is_with_cast_check": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "if (value is string text)"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePatternMatchingOverAsWithNullCheck",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePatternMatchingOverAsWithNullCheck/CsharpStylePatternMatchingOverAsWithNullCheck.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_pattern_matching_over_as_with_null_check": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "if (value is string text)"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferPatternMatching",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferPatternMatching/CsharpStylePreferPatternMatching.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_pattern_matching": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return value is 1 or 2 or 3;"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferNotPattern",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferNotPattern/CsharpStylePreferNotPattern.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_not_pattern": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return value is not string;"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferExtendedPropertyPattern",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferExtendedPropertyPattern/CsharpStylePreferExtendedPropertyPattern.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_extended_property_pattern": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return customer is { Address.Zip: 100 };"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferSwitchExpression",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferSwitchExpression/CsharpStylePreferSwitchExpression.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_switch_expression": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return value switch"
+        },
+        {
+          "t": "contains",
+          "s": "1 => \"one\","
+        },
+        {
+          "t": "contains",
+          "s": "_ => \"many\","
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleCoalesceExpression",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleCoalesceExpression/DotnetStyleCoalesceExpression.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_coalesce_expression": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return value ?? \"\";"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleNullPropagation",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleNullPropagation/DotnetStyleNullPropagation.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_null_propagation": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return value?.ToUpperInvariant();"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleThrowExpression",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleThrowExpression/CsharpStyleThrowExpression.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_throw_expression": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "_name = name ?? throw new ArgumentNullException(nameof(name));"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleConditionalDelegateCall",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleConditionalDelegateCall/CsharpStyleConditionalDelegateCall.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_conditional_delegate_call": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "_callback?.Invoke();"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferPrimaryConstructors",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferPrimaryConstructors/CsharpStylePreferPrimaryConstructors.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_primary_constructors": ""
+      },
+      "editorconfig": false,
+      "reportOnly": true,
+      "checks": [
+        {
+          "t": "reported",
+          "re": "IDE0290 .*'Service' could use a primary constructor; it was not converted automatically"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleImplicitObjectCreationWhenTypeIsApparent",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleImplicitObjectCreationWhenTypeIsApparent/CsharpStyleImplicitObjectCreationWhenTypeIsApparent.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_implicit_object_creation_when_type_is_apparent": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private readonly Dependency _other = new();"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferIndexOperator",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferIndexOperator/CsharpStylePreferIndexOperator.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_index_operator": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return values[^1];"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferRangeOperator",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferRangeOperator/CsharpStylePreferRangeOperator.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_range_operator": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return text[1..];"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferUtf8StringLiterals",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferUtf8StringLiterals/CsharpStylePreferUtf8StringLiterals.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_utf8_string_literals": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return \"hello\"u8.ToArray();"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStylePreferTupleSwap",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStylePreferTupleSwap/CsharpStylePreferTupleSwap.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_prefer_tuple_swap": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "(a, b) = (b, a);"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleDeconstructedVariableDeclaration",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleDeconstructedVariableDeclaration/CsharpStyleDeconstructedVariableDeclaration.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_deconstructed_variable_declaration": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "var (x, y) = (1, 2);"
+        },
+        {
+          "t": "contains",
+          "s": "return x + y;"
+        }
+      ]
+    },
+    {
+      "id": "CsharpStyleUnusedValueAssignmentPreference",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpStyleUnusedValueAssignmentPreference/CsharpStyleUnusedValueAssignmentPreference.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_style_unused_value_assignment_preference": ""
+      },
+      "editorconfig": false,
+      "reportOnly": true,
+      "checks": [
+        {
+          "t": "reported",
+          "re": "IDE0059 .*the value assigned to 'result' is never read"
+        }
+      ]
+    },
+    {
+      "id": "CsharpPreferSimpleDefaultExpression",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/CsharpPreferSimpleDefaultExpression/CsharpPreferSimpleDefaultExpression.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "csharp_prefer_simple_default_expression": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return default;"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStylePreferAutoProperties",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStylePreferAutoProperties/DotnetStylePreferAutoProperties.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_prefer_auto_properties": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public int Age { get; set; }"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStylePreferCompoundAssignment",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStylePreferCompoundAssignment/DotnetStylePreferCompoundAssignment.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_prefer_compound_assignment": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "_count += step;"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStylePreferSimplifiedBooleanExpressions",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStylePreferSimplifiedBooleanExpressions/DotnetStylePreferSimplifiedBooleanExpressions.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_prefer_simplified_boolean_expressions": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return flag || (other && flag);"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStylePreferSimplifiedInterpolation",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStylePreferSimplifiedInterpolation/DotnetStylePreferSimplifiedInterpolation.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_prefer_simplified_interpolation": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return $\"{value} items\";"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleObjectInitializer",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleObjectInitializer/DotnetStyleObjectInitializer.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_object_initializer": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "var person = new Person()\n        {\n            Name = \"Ann\",\n            Age = 30\n        };"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleCollectionInitializer",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleCollectionInitializer/DotnetStyleCollectionInitializer.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_collection_initializer": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "var list = new List<int>()\n        {\n            1,\n            2\n        };"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleExplicitTupleNames",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleExplicitTupleNames/DotnetStyleExplicitTupleNames.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_explicit_tuple_names": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return tuple.Left + tuple.Right;"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStylePreferInferredTupleNames",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStylePreferInferredTupleNames/DotnetStylePreferInferredTupleNames.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_prefer_inferred_tuple_names": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "var tuple = (left, right);"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStylePreferInferredAnonymousTypeMemberNames",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStylePreferInferredAnonymousTypeMemberNames/DotnetStylePreferInferredAnonymousTypeMemberNames.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_prefer_inferred_anonymous_type_member_names": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "new { Initialize().Name, Right = right }"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleQualificationForField",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleQualificationForField/DotnetStyleQualificationForField.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_qualification_for_field": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return _count + this.Size + this.Twice(_count);"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleQualificationForProperty",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleQualificationForProperty/DotnetStyleQualificationForProperty.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_qualification_for_property": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return this._count + Size + this.Twice(_count);"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleQualificationForMethod",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleQualificationForMethod/DotnetStyleQualificationForMethod.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_qualification_for_method": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return this._count + this.Size + Twice(_count);"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleQualificationForEvent",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleQualificationForEvent/DotnetStyleQualificationForEvent.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_qualification_for_event": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "Changed?.Invoke(this, EventArgs.Empty);"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStylePredefinedTypeForLocalsParametersMembers",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStylePredefinedTypeForLocalsParametersMembers/DotnetStylePredefinedTypeForLocalsParametersMembers.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_predefined_type_for_locals_parameters_members": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public int Number(string text, bool flag)"
+        },
+        {
+          "t": "contains",
+          "s": "int length = text.Length;"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStylePredefinedTypeForMemberAccess",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStylePredefinedTypeForMemberAccess/DotnetStylePredefinedTypeForMemberAccess.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_predefined_type_for_member_access": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return string.Join(\",\", parts) + int.MaxValue.ToString();"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleParenthesesInArithmeticBinaryOperators",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleParenthesesInArithmeticBinaryOperators/DotnetStyleParenthesesInArithmeticBinaryOperators.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_parentheses_in_arithmetic_binary_operators": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return a + (b * c);"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleParenthesesInRelationalBinaryOperators",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleParenthesesInRelationalBinaryOperators/DotnetStyleParenthesesInRelationalBinaryOperators.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_parentheses_in_relational_binary_operators": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return (a < b) == (b < c);"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleParenthesesInOtherBinaryOperators",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleParenthesesInOtherBinaryOperators/DotnetStyleParenthesesInOtherBinaryOperators.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_parentheses_in_other_binary_operators": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return (a && b) || c;"
+        }
+      ]
+    },
+    {
+      "id": "DotnetStyleParenthesesInOtherOperators",
+      "category": "CodeStyle",
+      "file": "src/Scenarios/CodeStyle/DotnetStyleParenthesesInOtherOperators/DotnetStyleParenthesesInOtherOperators.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {
+        "dotnet_style_parentheses_in_other_operators": ""
+      },
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return a + b;"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeClasses",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeClasses/InsertBlankLinePaddingBeforeClasses.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeClasses": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public delegate void PadFirst();",
+          "b": "public class InsertBlankLinePaddingBeforeClasses {"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public class InsertBlankLinePaddingBeforeClasses {",
+          "b": "public delegate void PadLast();"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterClasses",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterClasses/InsertBlankLinePaddingAfterClasses.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterClasses": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public class InsertBlankLinePaddingAfterClasses {",
+          "b": "public delegate void PadLast();"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public delegate void PadFirst();",
+          "b": "public class InsertBlankLinePaddingAfterClasses {"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeDelegates",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeDelegates/InsertBlankLinePaddingBeforeDelegates.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeDelegates": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int PadFirst;",
+          "b": "public delegate void Handler();"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public delegate void Handler();",
+          "b": "public int PadLast;"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterDelegates",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterDelegates/InsertBlankLinePaddingAfterDelegates.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterDelegates": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public delegate void Handler();",
+          "b": "public int PadLast;"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int PadFirst;",
+          "b": "public delegate void Handler();"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeEnumerations",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeEnumerations/InsertBlankLinePaddingBeforeEnumerations.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeEnumerations": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int PadFirst;",
+          "b": "public enum Kind { A, B }"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public enum Kind { A, B }",
+          "b": "public int PadLast;"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterEnumerations",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterEnumerations/InsertBlankLinePaddingAfterEnumerations.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterEnumerations": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public enum Kind { A, B }",
+          "b": "public int PadLast;"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int PadFirst;",
+          "b": "public enum Kind { A, B }"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeEvents",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeEvents/InsertBlankLinePaddingBeforeEvents.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeEvents": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int PadFirst;",
+          "b": "public event System.Action? Changed;"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public event System.Action? Changed;",
+          "b": "public int PadLast;"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterEvents",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterEvents/InsertBlankLinePaddingAfterEvents.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterEvents": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public event System.Action? Changed;",
+          "b": "public int PadLast;"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int PadFirst;",
+          "b": "public event System.Action? Changed;"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeFieldsMultiLine",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeFieldsMultiLine/InsertBlankLinePaddingBeforeFieldsMultiLine.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeFieldsMultiLine": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public void PadFirst() { }",
+          "b": "public int[] Values ="
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int[] Values =",
+          "b": "public void PadLast() { }"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterFieldsMultiLine",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterFieldsMultiLine/InsertBlankLinePaddingAfterFieldsMultiLine.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterFieldsMultiLine": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int[] Values =",
+          "b": "public void PadLast() { }"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public void PadFirst() { }",
+          "b": "public int[] Values ="
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeFieldsSingleLine",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeFieldsSingleLine/InsertBlankLinePaddingBeforeFieldsSingleLine.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeFieldsSingleLine": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public void PadFirst() { }",
+          "b": "public int Single = 1;"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int Single = 1;",
+          "b": "public void PadLast() { }"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterFieldsSingleLine",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterFieldsSingleLine/InsertBlankLinePaddingAfterFieldsSingleLine.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterFieldsSingleLine": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int Single = 1;",
+          "b": "public void PadLast() { }"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public void PadFirst() { }",
+          "b": "public int Single = 1;"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeInterfaces",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeInterfaces/InsertBlankLinePaddingBeforeInterfaces.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeInterfaces": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int PadFirst;",
+          "b": "public interface IMarker { }"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public interface IMarker { }",
+          "b": "public int PadLast;"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterInterfaces",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterInterfaces/InsertBlankLinePaddingAfterInterfaces.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterInterfaces": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public interface IMarker { }",
+          "b": "public int PadLast;"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int PadFirst;",
+          "b": "public interface IMarker { }"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeMethods",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeMethods/InsertBlankLinePaddingBeforeMethods.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeMethods": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int PadFirst { get; set; }",
+          "b": "public int Middle() { return 2; }"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int Middle() { return 2; }",
+          "b": "public int PadLast { get; set; }"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterMethods",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterMethods/InsertBlankLinePaddingAfterMethods.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterMethods": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int Middle() { return 2; }",
+          "b": "public int PadLast { get; set; }"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int PadFirst { get; set; }",
+          "b": "public int Middle() { return 2; }"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeNamespaces",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeNamespaces/InsertBlankLinePaddingBeforeNamespaces.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeNamespaces": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "namespace Testbed.Other.InsertBlankLinePaddingBeforeNamespaces.First { public class PadFirst { } }",
+          "b": "namespace Testbed.Settings.InsertBlankLinePaddingBeforeNamespaces {"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterNamespaces",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterNamespaces/InsertBlankLinePaddingAfterNamespaces.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterNamespaces": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "namespace Testbed.Settings.InsertBlankLinePaddingAfterNamespaces {",
+          "b": "namespace Testbed.Other.InsertBlankLinePaddingAfterNamespaces.Last {"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforePropertiesMultiLine",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforePropertiesMultiLine/InsertBlankLinePaddingBeforePropertiesMultiLine.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforePropertiesMultiLine": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public void PadFirst() { }",
+          "b": "public int Multi"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int Multi",
+          "b": "public void PadLast() { }"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterPropertiesMultiLine",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterPropertiesMultiLine/InsertBlankLinePaddingAfterPropertiesMultiLine.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterPropertiesMultiLine": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int Multi",
+          "b": "public void PadLast() { }"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public void PadFirst() { }",
+          "b": "public int Multi"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforePropertiesSingleLine",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforePropertiesSingleLine/InsertBlankLinePaddingBeforePropertiesSingleLine.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforePropertiesSingleLine": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public void PadFirst() { }",
+          "b": "public int Single { get; set; }"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int Single { get; set; }",
+          "b": "public void PadLast() { }"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterPropertiesSingleLine",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterPropertiesSingleLine/InsertBlankLinePaddingAfterPropertiesSingleLine.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterPropertiesSingleLine": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int Single { get; set; }",
+          "b": "public void PadLast() { }"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public void PadFirst() { }",
+          "b": "public int Single { get; set; }"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeStructs",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeStructs/InsertBlankLinePaddingBeforeStructs.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeStructs": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int PadFirst;",
+          "b": "public struct Pair { public int A; }"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public struct Pair { public int A; }",
+          "b": "public int PadLast;"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterStructs",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterStructs/InsertBlankLinePaddingAfterStructs.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterStructs": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public struct Pair { public int A; }",
+          "b": "public int PadLast;"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int PadFirst;",
+          "b": "public struct Pair { public int A; }"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeRegionTags",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeRegionTags/InsertBlankLinePaddingBeforeRegionTags.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeRegionTags": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int PadFirst;",
+          "b": "#region Group"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "#region Group",
+          "b": "public int Inside;"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterRegionTags",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterRegionTags/InsertBlankLinePaddingAfterRegionTags.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterRegionTags": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "#region Group",
+          "b": "public int Inside;"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int PadFirst;",
+          "b": "#region Group"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeEndRegionTags",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeEndRegionTags/InsertBlankLinePaddingBeforeEndRegionTags.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeEndRegionTags": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "public int Inside;",
+          "b": "#endregion"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "#endregion",
+          "b": "public int PadLast;"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterEndRegionTags",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterEndRegionTags/InsertBlankLinePaddingAfterEndRegionTags.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterEndRegionTags": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "#endregion",
+          "b": "public int PadLast;"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int Inside;",
+          "b": "#endregion"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeUsingStatementBlocks",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeUsingStatementBlocks/InsertBlankLinePaddingBeforeUsingStatementBlocks.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeUsingStatementBlocks": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "#nullable enable",
+          "b": "using System;"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "using System.Text;",
+          "b": "namespace Testbed"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingAfterUsingStatementBlocks",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingAfterUsingStatementBlocks/InsertBlankLinePaddingAfterUsingStatementBlocks.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingAfterUsingStatementBlocks": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "using System.Text;",
+          "b": "namespace Testbed"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "#nullable enable",
+          "b": "using System;"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeCaseStatements",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeCaseStatements/InsertBlankLinePaddingBeforeCaseStatements.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeCaseStatements": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "text = \"a\";\n                break;",
+          "b": "case 1:"
+        },
+        {
+          "t": "blankBetween",
+          "a": "text = \"b\";\n                break;",
+          "b": "default:"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "switch (text.Length)",
+          "b": "case 0:"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBeforeSingleLineComments",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBeforeSingleLineComments/InsertBlankLinePaddingBeforeSingleLineComments.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBeforeSingleLineComments": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "var value = 1;",
+          "b": "// grow the value"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "// grow the value",
+          "b": "value++;"
+        }
+      ]
+    },
+    {
+      "id": "InsertExplicitAccessModifiersOnClasses",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertExplicitAccessModifiersOnClasses/InsertExplicitAccessModifiersOnClasses.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertExplicitAccessModifiersOnClasses": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "internal class InsertExplicitAccessModifiersOnClasses"
+        }
+      ]
+    },
+    {
+      "id": "InsertExplicitAccessModifiersOnDelegates",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertExplicitAccessModifiersOnDelegates/InsertExplicitAccessModifiersOnDelegates.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertExplicitAccessModifiersOnDelegates": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private delegate void Handler();"
+        }
+      ]
+    },
+    {
+      "id": "InsertExplicitAccessModifiersOnEnumerations",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertExplicitAccessModifiersOnEnumerations/InsertExplicitAccessModifiersOnEnumerations.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertExplicitAccessModifiersOnEnumerations": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private enum Kind { A, B }"
+        }
+      ]
+    },
+    {
+      "id": "InsertExplicitAccessModifiersOnEvents",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertExplicitAccessModifiersOnEvents/InsertExplicitAccessModifiersOnEvents.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertExplicitAccessModifiersOnEvents": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private event System.Action? Changed;"
+        }
+      ]
+    },
+    {
+      "id": "InsertExplicitAccessModifiersOnFields",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertExplicitAccessModifiersOnFields/InsertExplicitAccessModifiersOnFields.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertExplicitAccessModifiersOnFields": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private int _count = 1;"
+        }
+      ]
+    },
+    {
+      "id": "InsertExplicitAccessModifiersOnInterfaces",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertExplicitAccessModifiersOnInterfaces/InsertExplicitAccessModifiersOnInterfaces.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertExplicitAccessModifiersOnInterfaces": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private interface IMarker { }"
+        }
+      ]
+    },
+    {
+      "id": "InsertExplicitAccessModifiersOnMethods",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertExplicitAccessModifiersOnMethods/InsertExplicitAccessModifiersOnMethods.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertExplicitAccessModifiersOnMethods": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private int Helper()"
+        }
+      ]
+    },
+    {
+      "id": "InsertExplicitAccessModifiersOnProperties",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertExplicitAccessModifiersOnProperties/InsertExplicitAccessModifiersOnProperties.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertExplicitAccessModifiersOnProperties": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private int Value { get; set; }"
+        }
+      ]
+    },
+    {
+      "id": "InsertExplicitAccessModifiersOnStructs",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertExplicitAccessModifiersOnStructs/InsertExplicitAccessModifiersOnStructs.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertExplicitAccessModifiersOnStructs": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private struct Pair { public int A; }"
+        }
+      ]
+    },
+    {
+      "id": "ConvertToFileScopedNamespace",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/ConvertToFileScopedNamespace/ConvertToFileScopedNamespace.cs",
+      "entry": "cleanup",
+      "settings": {
+        "convertToFileScopedNamespace": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "namespace Testbed.Settings.ConvertToFileScopedNamespace;"
+        },
+        {
+          "t": "absent",
+          "s": "namespace Testbed.Settings.ConvertToFileScopedNamespace\n{"
+        }
+      ]
+    },
+    {
+      "id": "ConvertToVarWhenApparent",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/ConvertToVarWhenApparent/ConvertToVarWhenApparent.cs",
+      "entry": "cleanup",
+      "settings": {
+        "convertToVarWhenApparent": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "var list = new List<int>();"
+        },
+        {
+          "t": "contains",
+          "s": "var map = new Dictionary<string, int>();"
+        }
+      ]
+    },
+    {
+      "id": "MakeFieldsReadonlyWhenSafe",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/MakeFieldsReadonlyWhenSafe/MakeFieldsReadonlyWhenSafe.cs",
+      "entry": "cleanup",
+      "settings": {
+        "makeFieldsReadonlyWhenSafe": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private readonly int _fixed = 1;"
+        },
+        {
+          "t": "contains",
+          "s": "private int _written;"
+        }
+      ]
+    },
+    {
+      "id": "SealClassesWhenSafe",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/SealClassesWhenSafe/SealClassesWhenSafe.cs",
+      "entry": "cleanup",
+      "settings": {
+        "sealClassesWhenSafe": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "internal sealed class Dog : Animal"
+        },
+        {
+          "t": "contains",
+          "s": "internal class Animal"
+        },
+        {
+          "t": "contains",
+          "s": "public sealed class SealClassesWhenSafe"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLineBeforeReturnAndThrowStatements",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLineBeforeReturnAndThrowStatements/InsertBlankLineBeforeReturnAndThrowStatements.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLineBeforeReturnAndThrowStatements": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "value++;",
+          "b": "return value.ToString();"
+        }
+      ]
+    },
+    {
+      "id": "ConvertToCollectionExpressions",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/ConvertToCollectionExpressions/ConvertToCollectionExpressions.cs",
+      "entry": "cleanup",
+      "settings": {
+        "convertToCollectionExpressions": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "int[] numbers = [1, 2, 3];"
+        },
+        {
+          "t": "contains",
+          "s": "List<string> names = [\"a\", \"b\"];"
+        }
+      ]
+    },
+    {
+      "id": "ReuseJsonSerializerOptionsForCA1869",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/ReuseJsonSerializerOptionsForCA1869/ReuseJsonSerializerOptionsForCA1869.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reuseJsonSerializerOptionsForCA1869": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "new JsonSerializerOptions()"
+        },
+        {
+          "t": "contains",
+          "s": "JsonSerializer.Serialize(new { A = 1 }, default(JsonSerializerOptions))"
+        }
+      ]
+    },
+    {
+      "id": "SimplifySingleStatementLambdas",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/SimplifySingleStatementLambdas/SimplifySingleStatementLambdas.cs",
+      "entry": "cleanup",
+      "settings": {
+        "simplifySingleStatementLambdas": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "Func<int, int> twice = x => x * 2;"
+        }
+      ]
+    },
+    {
+      "id": "ConvertToPatternMatchingNullChecks",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/ConvertToPatternMatchingNullChecks/ConvertToPatternMatchingNullChecks.cs",
+      "entry": "cleanup",
+      "settings": {
+        "convertToPatternMatchingNullChecks": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "if (text is null)"
+        },
+        {
+          "t": "absent",
+          "s": "text == null"
+        }
+      ]
+    },
+    {
+      "id": "ConvertStringFormatToInterpolation",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/ConvertStringFormatToInterpolation/ConvertStringFormatToInterpolation.cs",
+      "entry": "cleanup",
+      "settings": {
+        "convertStringFormatToInterpolation": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "return $\"{count} items\";"
+        }
+      ]
+    },
+    {
+      "id": "ConvertToStringNameOf",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/ConvertToStringNameOf/ConvertToStringNameOf.cs",
+      "entry": "cleanup",
+      "settings": {
+        "convertToStringNameOf": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "throw new ArgumentNullException(nameof(name));"
+        }
+      ]
+    },
+    {
+      "id": "InlineOutVariableDeclarations",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InlineOutVariableDeclarations/InlineOutVariableDeclarations.cs",
+      "entry": "cleanup",
+      "settings": {
+        "inlineOutVariableDeclarations": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "int.TryParse(\"12\", out var number)"
+        },
+        {
+          "t": "absent",
+          "s": "int number;"
+        }
+      ]
+    },
+    {
+      "id": "MoveUsingsOutsideNamespace",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/MoveUsingsOutsideNamespace/MoveUsingsOutsideNamespace.cs",
+      "entry": "cleanup",
+      "settings": {
+        "moveUsingsOutsideNamespace": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "using System;",
+            "using System.Text;",
+            "namespace Testbed.Settings.MoveUsingsOutsideNamespace"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "OrganizeUsings",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/OrganizeUsings/OrganizeUsings.cs",
+      "entry": "cleanup",
+      "settings": {
+        "organizeUsings": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "using System;",
+            "using System.Collections.Generic;",
+            "using System.Text;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UpdateEndRegionDirectives",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/UpdateEndRegionDirectives/UpdateEndRegionDirectives.cs",
+      "entry": "cleanup",
+      "settings": {
+        "updateEndRegionDirectives": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "#endregion Helpers"
+        }
+      ]
+    },
+    {
+      "id": "UpdateSingleLineMethods",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/UpdateSingleLineMethods/UpdateSingleLineMethods.cs",
+      "entry": "cleanup",
+      "settings": {
+        "updateSingleLineMethods": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "public void Increment() { _count++; }"
+        }
+      ]
+    },
+    {
+      "id": "UpdateAccessorsToBothBeSingleLineOrMultiLine",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/UpdateAccessorsToBothBeSingleLineOrMultiLine/UpdateAccessorsToBothBeSingleLineOrMultiLine.cs",
+      "entry": "cleanup",
+      "settings": {
+        "updateAccessorsToBothBeSingleLineOrMultiLine": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "{ _value = value; }"
+        },
+        {
+          "t": "absent",
+          "s": "_value = value;\n        }"
+        }
+      ]
+    },
+    {
+      "id": "FormatComments",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/FormatComments/FormatComments.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "// comment without a space"
+        },
+        {
+          "t": "contains",
+          "s": "// comment with extra spaces"
+        }
+      ]
+    },
+    {
+      "id": "RemoveRegions",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/RemoveRegions/RemoveRegions.cs",
+      "entry": "cleanup",
+      "settings": {
+        "removeRegions": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "#region"
+        },
+        {
+          "t": "absent",
+          "s": "#endregion"
+        },
+        {
+          "t": "contains",
+          "s": "private static int Twice(int x) => x * 2;"
+        }
+      ]
+    },
+    {
+      "id": "RemoveByteOrderMark",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/RemoveByteOrderMark/RemoveByteOrderMark.cs",
+      "entry": "cleanup",
+      "settings": {
+        "removeByteOrderMark": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "noBom"
+        }
+      ]
+    },
+    {
+      "id": "RemoveEndOfLineWhitespace",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/RemoveEndOfLineWhitespace/RemoveEndOfLineWhitespace.cs",
+      "entry": "cleanup",
+      "settings": {
+        "removeEndOfLineWhitespace": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "RemoveEndOfLineWhitespace   \n"
+        },
+        {
+          "t": "absent",
+          "s": "Run()   \n"
+        },
+        {
+          "t": "absent",
+          "s": "\"ok\";\t\n"
+        }
+      ]
+    },
+    {
+      "id": "RemoveBlankLinesAtTop",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/RemoveBlankLinesAtTop/RemoveBlankLinesAtTop.cs",
+      "entry": "cleanup",
+      "settings": {
+        "removeBlankLinesAtTop": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "namespace Testbed.Settings.RemoveBlankLinesAtTop;"
+        }
+      ]
+    },
+    {
+      "id": "RemoveBlankLinesAtBottom",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/RemoveBlankLinesAtBottom/RemoveBlankLinesAtBottom.cs",
+      "entry": "cleanup",
+      "settings": {
+        "removeBlankLinesAtBottom": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "}\n\n"
+        }
+      ]
+    },
+    {
+      "id": "RemoveBlankLinesAfterAttributes",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/RemoveBlankLinesAfterAttributes/RemoveBlankLinesAfterAttributes.cs",
+      "entry": "cleanup",
+      "settings": {
+        "removeBlankLinesAfterAttributes": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "noBlankBetween",
+          "a": "[System.Obsolete(\"old\")]",
+          "b": "public static string Run()"
+        }
+      ]
+    },
+    {
+      "id": "RemoveBlankLinesAfterOpeningBrace",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/RemoveBlankLinesAfterOpeningBrace/RemoveBlankLinesAfterOpeningBrace.cs",
+      "entry": "cleanup",
+      "settings": {
+        "removeBlankLinesAfterOpeningBrace": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "noBlankBetween",
+          "a": "public class RemoveBlankLinesAfterOpeningBrace\n{",
+          "b": "public static string Run()"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public static string Run()\n    {",
+          "b": "return \"ok\";"
+        }
+      ]
+    },
+    {
+      "id": "RemoveBlankLinesBeforeClosingBrace",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/RemoveBlankLinesBeforeClosingBrace/RemoveBlankLinesBeforeClosingBrace.cs",
+      "entry": "cleanup",
+      "settings": {
+        "removeBlankLinesBeforeClosingBrace": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "noBlankBetween",
+          "a": "return \"ok\";",
+          "b": "    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "RemoveBlankLinesBetweenChainedStatements",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/RemoveBlankLinesBetweenChainedStatements/RemoveBlankLinesBetweenChainedStatements.cs",
+      "entry": "cleanup",
+      "settings": {
+        "removeBlankLinesBetweenChainedStatements": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "noBlankBetween",
+          "a": "text = \"a\";\n        }",
+          "b": "else"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "text += \"c\";\n        }",
+          "b": "finally"
+        }
+      ]
+    },
+    {
+      "id": "RemoveMultipleConsecutiveBlankLines",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/RemoveMultipleConsecutiveBlankLines/RemoveMultipleConsecutiveBlankLines.cs",
+      "entry": "cleanup",
+      "settings": {
+        "removeMultipleConsecutiveBlankLines": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "value = 1;\n\n\n"
+        },
+        {
+          "t": "blankBetween",
+          "a": "var value = 1;",
+          "b": "return value.ToString();"
+        }
+      ]
+    },
+    {
+      "id": "FileHeaderCSharp",
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/FileHeaderCSharp/FileHeaderCSharp.cs",
+      "entry": "cleanup",
+      "settings": {
+        "fileHeaderCSharp": "// Copyright (c) Testbed\n// Licensed under the MIT license."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "// Copyright (c) Testbed\n// Licensed under the MIT license."
+        }
+      ]
+    },
+    {
+      "id": "ReorganizeRunAtStartOfCleanup",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizeRunAtStartOfCleanup/ReorganizeRunAtStartOfCleanup.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "public int Alpha = 1;",
+            "public ReorganizeRunAtStartOfCleanup() { }",
+            "public int Zeta { get; set; } = 3;",
+            "public int Total()"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ReorganizeAlphabetizeMembersOfTheSameGroup",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizeAlphabetizeMembersOfTheSameGroup/ReorganizeAlphabetizeMembersOfTheSameGroup.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "alphabetizeMembersOfTheSameGroup": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "public static string Apple()",
+            "public static string Mango()",
+            "public static string Zebra()"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ReorganizeExplicitMembersAtEnd",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizeExplicitMembersAtEnd/ReorganizeExplicitMembersAtEnd.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "explicitMembersAtEnd": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "public int Count { get; set; }",
+            "public static string Run()",
+            "void IDisposable.Dispose()"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ReorganizeKeepMembersWithinRegions",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizeKeepMembersWithinRegions/ReorganizeKeepMembersWithinRegions.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "keepMembersWithinRegions": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "#region Helpers",
+            "public static string Apple()",
+            "public static string Zebra()",
+            "#endregion",
+            "public static string Run()"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ReorganizePrimaryOrderByAccessLevel",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizePrimaryOrderByAccessLevel/ReorganizePrimaryOrderByAccessLevel.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "primaryOrderByAccessLevel": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "public static string Run()",
+            "public int Visible()",
+            "private int _hidden = 1;",
+            "private int Helper()"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ReorganizeReverseOrderByAccessLevel",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizeReverseOrderByAccessLevel/ReorganizeReverseOrderByAccessLevel.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "reverseOrderByAccessLevel": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "private int Private()",
+            "public int Public()"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ReorganizeRegionsInsertNewRegions",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizeRegionsInsertNewRegions/ReorganizeRegionsInsertNewRegions.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "regionsInsertNewRegions": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "#region Fields"
+        },
+        {
+          "t": "contains",
+          "s": "#region Methods"
+        },
+        {
+          "t": "contains",
+          "s": "#endregion"
+        }
+      ]
+    },
+    {
+      "id": "ReorganizeRegionsIncludeAccessLevel",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizeRegionsIncludeAccessLevel/ReorganizeRegionsIncludeAccessLevel.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "regionsInsertNewRegions": true,
+          "regionsIncludeAccessLevel": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "#region Public Fields"
+        },
+        {
+          "t": "contains",
+          "s": "#region Private Fields"
+        },
+        {
+          "t": "contains",
+          "s": "#region Public Methods"
+        }
+      ]
+    },
+    {
+      "id": "ReorganizeRegionsIncludeAccessLevelForMethodsOnly",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizeRegionsIncludeAccessLevelForMethodsOnly/ReorganizeRegionsIncludeAccessLevelForMethodsOnly.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "regionsInsertNewRegions": true,
+          "regionsIncludeAccessLevel": true,
+          "regionsIncludeAccessLevelForMethodsOnly": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "#region Fields"
+        },
+        {
+          "t": "contains",
+          "s": "#region Public Methods"
+        },
+        {
+          "t": "absent",
+          "s": "#region Public Fields"
+        }
+      ]
+    },
+    {
+      "id": "ReorganizeRegionsInsertKeepEvenIfEmpty",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizeRegionsInsertKeepEvenIfEmpty/ReorganizeRegionsInsertKeepEvenIfEmpty.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "regionsInsertNewRegions": true,
+          "regionsInsertKeepEvenIfEmpty": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "#region Fields"
+        },
+        {
+          "t": "contains",
+          "s": "#region Constructors"
+        },
+        {
+          "t": "contains",
+          "s": "#region Events"
+        }
+      ]
+    },
+    {
+      "id": "ReorganizeRegionsRemoveExistingRegions",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizeRegionsRemoveExistingRegions/ReorganizeRegionsRemoveExistingRegions.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "regionsRemoveExistingRegions": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "#region Old"
+        },
+        {
+          "t": "absent",
+          "s": "#endregion"
+        },
+        {
+          "t": "contains",
+          "s": "public static string Run()"
+        }
+      ]
+    },
+    {
+      "id": "ReorganizePerformWhenPreprocessorConditionals",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizePerformWhenPreprocessorConditionals/ReorganizePerformWhenPreprocessorConditionals.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "performWhenPreprocessorConditionals": "yes"
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "public int Alpha = 1;",
+            "public static string Name()"
+          ]
+        },
+        {
+          "t": "contains",
+          "s": "#if DEBUG\n    public static string Debug() => \"d\";\n#endif"
+        }
+      ]
+    },
+    {
+      "id": "ReorganizeMemberTypes",
+      "category": "Reorganize",
+      "file": "src/Scenarios/Reorganize/ReorganizeMemberTypes/ReorganizeMemberTypes.cs",
+      "entry": "cleanup",
+      "settings": {
+        "reorganize": {
+          "runAtStartOfCleanup": true,
+          "memberTypes": {
+            "methods": {
+              "order": 1,
+              "name": "Methods"
+            },
+            "fields": {
+              "order": 2,
+              "name": "Fields"
+            }
+          }
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "public static string Run()",
+            "public int Alpha = 1;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FormatRazorComponents",
+      "category": "Razor",
+      "file": "src/Scenarios.Razor/Components/FormatRazorComponents.razor",
+      "entry": "razor",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "razor": {},
+      "checks": [
+        {
+          "t": "contains",
+          "s": "    private int _count = 1;"
+        },
+        {
+          "t": "contains",
+          "s": "    private void Add()"
+        },
+        {
+          "t": "absent",
+          "s": "private void Add(){_count++;}"
+        }
+      ]
+    },
+    {
+      "id": "RazorIndentSize",
+      "category": "Razor",
+      "file": "src/Scenarios.Razor/Components/RazorIndentSize.razor",
+      "entry": "razor",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "razor": {
+        "indentSize": 2,
+        "indentStyle": "space"
+      },
+      "checks": [
+        {
+          "t": "contains",
+          "s": "\n  private int _count = 1;"
+        }
+      ]
+    },
+    {
+      "id": "RazorIndentStyle",
+      "category": "Razor",
+      "file": "src/Scenarios.Razor/Components/RazorIndentStyle.razor",
+      "entry": "razor",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "razor": {
+        "indentStyle": "tab"
+      },
+      "checks": [
+        {
+          "t": "contains",
+          "s": "\n\tprivate int _count = 1;"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigNamingPrivateFields",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigNamingPrivateFields/EditorConfigNamingPrivateFields.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private int _count = 1;"
+        },
+        {
+          "t": "contains",
+          "s": "=> _count + 1;"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigNamingLocalsAndParameters",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigNamingLocalsAndParameters/EditorConfigNamingLocalsAndParameters.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private static int Add(int first, int second)"
+        },
+        {
+          "t": "contains",
+          "s": "var sum = first + second;"
+        },
+        {
+          "t": "contains",
+          "s": "return sum;"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigNamingConstants",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigNamingConstants/EditorConfigNamingConstants.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private const int MaxItems = 10;"
+        },
+        {
+          "t": "contains",
+          "s": "(MaxItems * 2)"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigNamingInterfacePrefix",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigNamingInterfacePrefix/EditorConfigNamingInterfacePrefix.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": true,
+      "checks": [
+        {
+          "t": "reported",
+          "re": "IDE1006"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigIndentStyleSpace",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigIndentStyleSpace/EditorConfigIndentStyleSpace.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "\t"
+        },
+        {
+          "t": "contains",
+          "s": "    public static string Run()"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigTrimTrailingWhitespace",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigTrimTrailingWhitespace/EditorConfigTrimTrailingWhitespace.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "   \n"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigInsertFinalNewline",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigInsertFinalNewline/EditorConfigInsertFinalNewline.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "endsWith",
+          "s": "    public static string Run() => \"ok\";\n}"
+        },
+        {
+          "t": "absent",
+          "s": "}\n}"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigCharset",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigCharset/EditorConfigCharset.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "noBom"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigNamespaceDeclarations",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigNamespaceDeclarations/EditorConfigNamespaceDeclarations.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "namespace Testbed.EditorConfig.EditorConfigNamespaceDeclarations;"
+        },
+        {
+          "t": "absent",
+          "s": "namespace Testbed.EditorConfig.EditorConfigNamespaceDeclarations\n{"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigUsingDirectivePlacement",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigUsingDirectivePlacement/EditorConfigUsingDirectivePlacement.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "namespace Testbed.EditorConfig.EditorConfigUsingDirectivePlacement",
+            "using System;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigVarPreference",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigVarPreference/EditorConfigVarPreference.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "var list = new List<int>();"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigRequireAccessibilityModifiers",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigRequireAccessibilityModifiers/EditorConfigRequireAccessibilityModifiers.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private int _value = 1;"
+        },
+        {
+          "t": "contains",
+          "s": "private int Get()"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigReadonlyField",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigReadonlyField/EditorConfigReadonlyField.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "private readonly int _value = 1;"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigCA1822MakeMemberStatic",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigCA1822MakeMemberStatic/EditorConfigCA1822MakeMemberStatic.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "internal static int DoubleOf(int value)"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigCA1852SealInternalType",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigCA1852SealInternalType/EditorConfigCA1852SealInternalType.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "internal sealed class Leaf"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigCA1507UseNameOf",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigCA1507UseNameOf/EditorConfigCA1507UseNameOf.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "throw new ArgumentNullException(nameof(name));"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigIDE0005RemoveDuplicateUsings",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigIDE0005RemoveDuplicateUsings/EditorConfigIDE0005RemoveDuplicateUsings.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "using System;\nusing System;"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigIDE0051RemoveUnusedPrivateMember",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigIDE0051RemoveUnusedPrivateMember/EditorConfigIDE0051RemoveUnusedPrivateMember.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "private static int Unused()"
+        }
+      ]
+    },
+    {
+      "id": "EditorConfigNewLineBeforeOpenBrace",
+      "category": "EditorConfig",
+      "file": "src/Scenarios/EditorConfig/EditorConfigNewLineBeforeOpenBrace/EditorConfigNewLineBeforeOpenBrace.cs",
+      "entry": "cleanup",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": true,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public class EditorConfigNewLineBeforeOpenBrace {"
+        },
+        {
+          "t": "contains",
+          "s": "public static string Run() {"
+        }
+      ]
+    },
+    {
+      "id": "RemoveXmlDocumentation",
+      "category": "Commands",
+      "file": "src/Scenarios/Commands/RemoveXmlDocumentation/RemoveXmlDocumentation.cs",
+      "entry": "removeXmlDoc",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "checks": [
+        {
+          "t": "absent",
+          "s": "///"
+        },
+        {
+          "t": "contains",
+          "s": "public static string Run() => \"ok\";"
+        }
+      ]
+    },
+    {
+      "id": "FixNamespace",
+      "category": "Commands",
+      "file": "src/Scenarios/Commands/FixNamespace/FixNamespace.cs",
+      "entry": "fixNamespace",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "expectedNamespace": "Testbed.Commands.FixNamespace",
+      "checks": [
+        {
+          "t": "contains",
+          "s": "namespace Testbed.Commands.FixNamespace;"
+        },
+        {
+          "t": "absent",
+          "s": "Testbed.Wrong.Place"
+        }
+      ]
+    },
+    {
+      "id": "SplitTopLevelTypes",
+      "category": "Commands",
+      "file": "src/Scenarios/Commands/SplitTopLevelTypes/SplitTopLevelTypes.cs",
+      "entry": "splitTypes",
+      "settings": {},
+      "codeStyle": {},
+      "editorconfig": false,
+      "reportOnly": false,
+      "createdFiles": [
+        "SplitSecond.cs",
+        "SplitThird.cs"
+      ],
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public class SplitTopLevelTypes"
+        },
+        {
+          "t": "absent",
+          "s": "public class SplitSecond"
+        },
+        {
+          "t": "absent",
+          "s": "public static class SplitThird"
+        }
+      ]
+    }
+  ]
+}

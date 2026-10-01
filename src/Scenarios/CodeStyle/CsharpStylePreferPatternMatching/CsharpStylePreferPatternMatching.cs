@@ -1,0 +1,11 @@
+namespace Testbed.CodeStyle.CsharpStylePreferPatternMatching;
+
+public class CsharpStylePreferPatternMatching
+{
+    public bool InRange(int value)
+    {
+        return value == 1 || value == 2 || value == 3;
+    }
+
+    public static string Run() => new CsharpStylePreferPatternMatching().InRange(2).ToString();
+}
