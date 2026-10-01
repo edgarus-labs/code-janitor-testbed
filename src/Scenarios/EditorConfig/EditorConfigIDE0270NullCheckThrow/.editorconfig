@@ -1,0 +1,5 @@
+root = true
+
+[*.cs]
+dotnet_style_coalesce_expression = true:warning
+dotnet_diagnostic.IDE0270.severity = warning

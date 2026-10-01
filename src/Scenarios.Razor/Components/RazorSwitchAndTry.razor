@@ -1,0 +1,13 @@
+@page "/RazorSwitchAndTry"
+@code {
+private string Describe(int n){
+switch(n){
+case 1: return "one";
+default: return "many";
+}
+}
+private string Safe(){
+try{ return Describe(1); }catch(System.Exception){ return "error"; }
+}
+}
+<p>@Describe(1) @Safe()</p>

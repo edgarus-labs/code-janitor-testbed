@@ -1,4 +1,6 @@
 <Solution>
   <Project Path="src/Scenarios/Scenarios.csproj" />
   <Project Path="src/Scenarios.Razor/Scenarios.Razor.csproj" />
+  <Project Path="src/Scenarios.TopLevel/Scenarios.TopLevel.csproj" />
+  <Project Path="src/Scenarios.MainMethod/Scenarios.MainMethod.csproj" />
 </Solution>

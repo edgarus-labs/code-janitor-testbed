@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+csharp_preferred_modifier_order = public,private,protected,internal,file,new,abstract,virtual,override,sealed,static,extern,unsafe,volatile,async,required,readonly:warning

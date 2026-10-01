@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+dotnet_style_allow_statement_immediately_after_block_experimental = false:warning

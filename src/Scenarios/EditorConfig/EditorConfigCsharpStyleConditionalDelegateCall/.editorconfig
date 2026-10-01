@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+csharp_style_conditional_delegate_call = true:warning

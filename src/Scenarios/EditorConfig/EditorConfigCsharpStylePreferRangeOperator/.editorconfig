@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+csharp_style_prefer_range_operator = true:warning

@@ -1,0 +1,6 @@
+root = true
+
+[*.cs]
+dotnet_remove_unnecessary_suppression_exclusions = IDE0051
+dotnet_diagnostic.IDE0079.severity = warning
+dotnet_diagnostic.IDE0001.severity = none

@@ -1,0 +1,9 @@
+root = true
+
+[*.cs]
+dotnet_naming_rule.methods.severity = silent
+dotnet_naming_rule.methods.symbols = methods_symbols
+dotnet_naming_rule.methods.style = methods_style
+dotnet_naming_symbols.methods_symbols.applicable_kinds = method
+dotnet_naming_symbols.methods_symbols.applicable_accessibilities = private
+dotnet_naming_style.methods_style.capitalization = pascal_case

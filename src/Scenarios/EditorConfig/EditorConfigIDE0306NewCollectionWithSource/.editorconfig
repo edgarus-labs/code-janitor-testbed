@@ -1,0 +1,5 @@
+root = true
+
+[*.cs]
+dotnet_style_prefer_collection_expression = true:warning
+dotnet_diagnostic.IDE0306.severity = warning

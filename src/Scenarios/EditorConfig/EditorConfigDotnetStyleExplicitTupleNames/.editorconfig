@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+dotnet_style_explicit_tuple_names = true:warning

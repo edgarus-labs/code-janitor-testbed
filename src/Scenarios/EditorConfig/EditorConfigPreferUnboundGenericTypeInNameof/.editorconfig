@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+csharp_style_prefer_unbound_generic_type_in_nameof = true:warning
