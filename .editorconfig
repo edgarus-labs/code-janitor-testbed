@@ -1,0 +1,2 @@
+# Stops the search for .editorconfig files here, so the scenarios behave the same wherever the testbed is cloned.
+root = true
