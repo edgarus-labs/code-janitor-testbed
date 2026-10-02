@@ -1,0 +1,5 @@
+root = true
+
+[*.cs]
+dotnet_style_prefer_foreach_explicit_cast_in_source = always:warning
+dotnet_diagnostic.IDE0220.severity = warning

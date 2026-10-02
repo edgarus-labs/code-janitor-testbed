@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:warning

@@ -1,0 +1,10 @@
+root = true
+
+[*.cs]
+dotnet_naming_rule.locals.severity = warning
+dotnet_naming_rule.locals.symbols = locals_symbols
+dotnet_naming_rule.locals.style = locals_style
+dotnet_naming_symbols.locals_symbols.applicable_kinds = local
+dotnet_naming_symbols.locals_symbols.applicable_accessibilities = *
+dotnet_naming_style.locals_style.capitalization = all_lower
+dotnet_naming_style.locals_style.word_separator = _

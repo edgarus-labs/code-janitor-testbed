@@ -1,0 +1,6 @@
+@page "/RazorForeachAndWhile"
+@foreach (var item in new[] { 1, 2 }) {
+<p>@item</p>
+}
+@{ var n = 0; while (n < 2) { n++; } }
+<p>@n</p>

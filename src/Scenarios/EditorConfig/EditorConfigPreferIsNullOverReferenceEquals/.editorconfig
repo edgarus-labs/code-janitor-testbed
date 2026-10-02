@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:warning

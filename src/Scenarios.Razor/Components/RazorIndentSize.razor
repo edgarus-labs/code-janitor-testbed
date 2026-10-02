@@ -1,0 +1,11 @@
+@page "/RazorIndentSize"
+<h3>RazorIndentSize</h3>
+@if (_count>0) {
+<p>Count is @_count</p>
+} else {
+<p>No count</p>
+}
+@code {
+private int _count=1;
+private void Add(){_count++;}
+}

@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+csharp_style_allow_embedded_statements_on_same_line_experimental = false:warning

@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Build the unfixed solution
+        run: dotnet build CodeJanitor.Testbed.slnx --nologo
+      - name: Run every scenario
+        run: dotnet run --project src/Scenarios --no-build | tee scenarios.out
+      - name: Every scenario printed a value
+        run: |
+          expected=$(node -e "console.log(require('./scenarios.json').scenarios.filter(s=>s.printed).length)")
+          actual=$(grep -c '=' scenarios.out)
+          test "$expected" -gt 0 && test "$expected" = "$actual" || { echo "expected $expected lines, got $actual"; exit 1; }

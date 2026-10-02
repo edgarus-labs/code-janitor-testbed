@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+csharp_prefer_simple_using_statement = true:warning

@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+dotnet_prefer_system_hash_code = true:warning

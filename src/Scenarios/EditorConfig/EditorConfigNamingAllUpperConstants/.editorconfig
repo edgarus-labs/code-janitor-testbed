@@ -1,0 +1,11 @@
+root = true
+
+[*.cs]
+dotnet_naming_rule.constants.severity = warning
+dotnet_naming_rule.constants.symbols = constants_symbols
+dotnet_naming_rule.constants.style = constants_style
+dotnet_naming_symbols.constants_symbols.applicable_kinds = field
+dotnet_naming_symbols.constants_symbols.applicable_accessibilities = private
+dotnet_naming_symbols.constants_symbols.required_modifiers = const
+dotnet_naming_style.constants_style.capitalization = all_upper
+dotnet_naming_style.constants_style.word_separator = _

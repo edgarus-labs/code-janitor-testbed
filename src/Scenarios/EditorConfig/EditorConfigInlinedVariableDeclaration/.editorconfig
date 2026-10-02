@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+csharp_style_inlined_variable_declaration = true:warning

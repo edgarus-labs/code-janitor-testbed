@@ -1,0 +1,8 @@
+root = true
+
+[*.cs]
+[*.vb]
+csharp_prefer_braces = true:warning
+
+[*.cs]
+csharp_prefer_braces = false:warning

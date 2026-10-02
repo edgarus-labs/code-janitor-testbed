@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+dotnet_style_prefer_simplified_interpolation = true:warning

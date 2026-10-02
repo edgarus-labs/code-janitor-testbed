@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+dotnet_style_null_propagation = true:warning

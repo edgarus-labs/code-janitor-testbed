@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+trim_trailing_whitespace = true
