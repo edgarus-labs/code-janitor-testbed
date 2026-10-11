@@ -6732,7 +6732,6 @@
       "trap": false,
       "reportOnly": false,
       "policy": false,
-      "knownDefect": "The IDE0380 analyzer is in Roslyn 5.9 but not in the 5.0 the server uses.",
       "checks": [
         {
           "t": "contains",
