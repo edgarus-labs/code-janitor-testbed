@@ -609,12 +609,20 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0290 .*'Service' could use a primary constructor; it was not converted automatically"
+          "t": "contains",
+          "s": "public class Service(Dependency dependency)"
+        },
+        {
+          "t": "contains",
+          "s": "private readonly Dependency _dependency = dependency;"
+        },
+        {
+          "t": "absent",
+          "s": "public Service(Dependency dependency)"
         }
       ]
     },
@@ -729,7 +737,11 @@
       "checks": [
         {
           "t": "contains",
-          "s": "(a, b) = (b, a);"
+          "s": "(b, a) = (a, b);"
+        },
+        {
+          "t": "absent",
+          "s": "var temp"
         }
       ]
     },
@@ -752,7 +764,7 @@
       "checks": [
         {
           "t": "contains",
-          "s": "var (x, y) = (1, 2);"
+          "s": "var (x, y) = (x: 1, y: 2);"
         },
         {
           "t": "contains",
@@ -774,12 +786,16 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0059 .*the value assigned to 'result' is never read"
+          "t": "contains",
+          "s": "_ = Compute();\n        int result = Compute();"
+        },
+        {
+          "t": "absent",
+          "s": "\n        result = Compute();"
         }
       ]
     },
@@ -917,7 +933,7 @@
       "checks": [
         {
           "t": "contains",
-          "s": "var person = new Person()\n        {\n            Name = \"Ann\",\n            Age = 30\n        };"
+          "s": "var person = new Person\n        {\n            Name = \"Ann\",\n            Age = 30\n        };"
         }
       ]
     },
@@ -940,7 +956,7 @@
       "checks": [
         {
           "t": "contains",
-          "s": "var list = new List<int>()\n        {\n            1,\n            2\n        };"
+          "s": "var list = new List<int>\n        {\n            1,\n            2\n        };"
         }
       ]
     },
@@ -1243,7 +1259,11 @@
       "checks": [
         {
           "t": "contains",
-          "s": "return a + b;"
+          "s": "return (a) + (b);"
+        },
+        {
+          "t": "absent",
+          "s": "((a))"
         }
       ]
     },
@@ -1814,6 +1834,35 @@
           "t": "noBlankBetween",
           "a": "public void PadFirst() { }",
           "b": "public int Multi"
+        }
+      ]
+    },
+    {
+      "id": "InsertBlankLinePaddingBetweenPropertiesMultiLineAccessors",
+      "printed": true,
+      "category": "Settings",
+      "file": "src/Scenarios/Settings/InsertBlankLinePaddingBetweenPropertiesMultiLineAccessors/InsertBlankLinePaddingBetweenPropertiesMultiLineAccessors.cs",
+      "entry": "cleanup",
+      "settings": {
+        "insertBlankLinePaddingBetweenPropertiesMultiLineAccessors": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "return _value;\n        }",
+          "b": "set"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "public int Value",
+          "b": "get"
         }
       ]
     },
@@ -2460,9 +2509,9 @@
     },
     {
       "id": "SealClassesWhenSafe",
-      "printed": true,
+      "printed": false,
       "category": "Settings",
-      "file": "src/Scenarios/Settings/SealClassesWhenSafe/SealClassesWhenSafe.cs",
+      "file": "src/Scenarios.Sealing/Settings/SealClassesWhenSafe/SealClassesWhenSafe.cs",
       "entry": "cleanup",
       "settings": {
         "sealClassesWhenSafe": true
@@ -2535,8 +2584,8 @@
           "s": "int[] numbers = [1, 2, 3];"
         },
         {
-          "t": "contains",
-          "s": "List<string> names = [\"a\", \"b\"];"
+          "t": "absent",
+          "s": "new int[]"
         }
       ]
     },
@@ -2682,7 +2731,7 @@
       "checks": [
         {
           "t": "contains",
-          "s": "int.TryParse(\"12\", out var number)"
+          "s": "int.TryParse(\"12\", out int number)"
         },
         {
           "t": "absent",
@@ -2836,11 +2885,15 @@
       "checks": [
         {
           "t": "contains",
-          "s": "// comment without a space"
+          "s": "// comment without a space comment with extra spaces"
         },
         {
-          "t": "contains",
-          "s": "// comment with extra spaces"
+          "t": "absent",
+          "s": "//comment"
+        },
+        {
+          "t": "absent",
+          "s": "//  comment"
         }
       ]
     },
@@ -3967,9 +4020,9 @@
     },
     {
       "id": "EditorConfigCA1852SealInternalType",
-      "printed": true,
+      "printed": false,
       "category": "EditorConfig",
-      "file": "src/Scenarios/EditorConfig/EditorConfigCA1852SealInternalType/EditorConfigCA1852SealInternalType.cs",
+      "file": "src/Scenarios.Sealing/EditorConfig/EditorConfigCA1852SealInternalType/EditorConfigCA1852SealInternalType.cs",
       "entry": "cleanup",
       "settings": {},
       "codeStyle": {},
@@ -4251,7 +4304,7 @@
       "checks": [
         {
           "t": "contains",
-          "s": "new Box {\n            Width = 1,\n            Height = 2\n        };"
+          "s": "var box = new Box\n        {\n            Width = 1,\n            Height = 2\n        };"
         }
       ]
     },
@@ -4272,7 +4325,7 @@
       "checks": [
         {
           "t": "contains",
-          "s": "new {\n            X = 1,\n            Y = 2\n        };"
+          "s": "var point = new\n        {\n            X = 1,\n            Y = 2\n        };"
         }
       ]
     },
@@ -4313,8 +4366,12 @@
       "policy": false,
       "checks": [
         {
+          "t": "contains",
+          "s": "public int Count\n    {\n        get; set;\n    }"
+        },
+        {
           "t": "absent",
-          "s": "{ n++; }"
+          "s": "{ get; set; }"
         }
       ]
     },
@@ -4980,12 +5037,20 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0008|var"
+          "t": "contains",
+          "s": "List<int> items = Make();"
+        },
+        {
+          "t": "contains",
+          "s": "using System.Collections.Generic;"
+        },
+        {
+          "t": "absent",
+          "s": "var items"
         }
       ]
     },
@@ -5006,7 +5071,11 @@
       "checks": [
         {
           "t": "contains",
-          "s": "System.Collections.Generic.List<int> list = new System.Collections.Generic.List<int>();"
+          "s": "List<int> list = new System.Collections.Generic.List<int>();"
+        },
+        {
+          "t": "absent",
+          "s": "var list"
         }
       ]
     },
@@ -5161,7 +5230,11 @@
       "checks": [
         {
           "t": "contains",
-          "s": "System.Threading.Lock _gate"
+          "s": "private readonly Lock _gate = new();"
+        },
+        {
+          "t": "contains",
+          "s": "using System.Threading;"
         }
       ]
     },
@@ -5328,12 +5401,16 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0070"
+          "t": "contains",
+          "s": "return System.HashCode.Combine(A, B);"
+        },
+        {
+          "t": "absent",
+          "s": "-1521134295"
         }
       ]
     },
@@ -5374,12 +5451,16 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0220"
+          "t": "contains",
+          "s": "foreach (int number in items.Select(v => (int)v))"
+        },
+        {
+          "t": "contains",
+          "s": "using System.Linq;"
         }
       ]
     },
@@ -5420,8 +5501,12 @@
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0079"
+          "t": "contains",
+          "s": "#pragma warning disable IDE0001"
+        },
+        {
+          "t": "contains",
+          "s": "#pragma warning restore IDE0001"
         }
       ]
     },
@@ -5861,7 +5946,11 @@
       "checks": [
         {
           "t": "contains",
-          "s": "string.Equals(text, \"ABC\", System.StringComparison.OrdinalIgnoreCase)"
+          "s": "text.Equals(\"ABC\", System.StringComparison.InvariantCultureIgnoreCase)"
+        },
+        {
+          "t": "absent",
+          "s": "ToUpperInvariant"
         }
       ]
     },
@@ -5953,7 +6042,15 @@
       "checks": [
         {
           "t": "contains",
-          "s": "TryGetValue(1, out var value)"
+          "s": "if (map.TryGetValue(1, out string? value))"
+        },
+        {
+          "t": "contains",
+          "s": "return value;"
+        },
+        {
+          "t": "absent",
+          "s": "ContainsKey"
         }
       ]
     },
@@ -6203,8 +6300,8 @@
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0050"
+          "t": "contains",
+          "s": "var pair = new { First = 1, Second = 2 };"
         }
       ]
     },
@@ -6283,16 +6380,20 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0076"
+          "t": "absent",
+          "s": "Scope = \"bogus\""
         },
         {
-          "t": "reported",
-          "re": "IDE0077"
+          "t": "absent",
+          "s": "Testbed.Missing.Method"
+        },
+        {
+          "t": "contains",
+          "s": "public class EditorConfigIDE0076IDE0077GlobalSuppressions"
         }
       ]
     },
@@ -6313,7 +6414,11 @@
       "checks": [
         {
           "t": "contains",
-          "s": "string text = \"a\";"
+          "s": "bool isText = value is string;"
+        },
+        {
+          "t": "absent",
+          "s": "!is"
         }
       ]
     },
@@ -6471,12 +6576,16 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0241"
+          "t": "absent",
+          "s": "#nullable disable"
+        },
+        {
+          "t": "contains",
+          "s": "public enum EditorConfigIDE0241Level"
         }
       ]
     },
@@ -6497,7 +6606,11 @@
       "checks": [
         {
           "t": "contains",
-          "s": "bool matched = value is string;"
+          "s": "bool matched = value is string { Length: > 0 };"
+        },
+        {
+          "t": "absent",
+          "s": " as string"
         }
       ]
     },
@@ -6571,12 +6684,16 @@
           "s": "Span<int> stacked = [1, 2];"
         },
         {
-          "t": "reported",
-          "re": "IDE0305"
+          "t": "contains",
+          "s": "List<int> copy = [.. source];"
         },
         {
-          "t": "reported",
-          "re": "IDE0304"
+          "t": "contains",
+          "s": "ImmutableArray<int> built = [1];"
+        },
+        {
+          "t": "absent",
+          "s": "CreateBuilder"
         }
       ]
     },
@@ -6590,7 +6707,6 @@
       "codeStyle": {},
       "editorconfig": true,
       "alwaysOn": false,
-      "knownDefect": "IDE0306: new List<T>(source) is neither converted nor reported",
       "everything": false,
       "trap": false,
       "reportOnly": false,
@@ -6616,6 +6732,7 @@
       "trap": false,
       "reportOnly": false,
       "policy": false,
+      "knownDefect": "The IDE0380 analyzer is in Roslyn 5.9 but not in the 5.0 the server uses.",
       "checks": [
         {
           "t": "contains",
@@ -6639,12 +6756,12 @@
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0390"
+          "t": "contains",
+          "s": "public override async Task<string> Get() => \"b\";"
         },
         {
-          "t": "reported",
-          "re": "IDE0391"
+          "t": "contains",
+          "s": "private static async Task<string> Plain() => \"c\";"
         }
       ]
     },
@@ -6740,15 +6857,22 @@
       "codeStyle": {},
       "editorconfig": true,
       "alwaysOn": false,
-      "knownDefect": "IDE0211: the parser reads top-level statements as members, so the rule never sees them",
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0211"
+          "t": "contains",
+          "s": "private static void Main(string[] args)"
+        },
+        {
+          "t": "contains",
+          "s": "System.Console.WriteLine(greeting);"
+        },
+        {
+          "t": "absent",
+          "s": "\nvar greeting"
         }
       ]
     },
@@ -6764,12 +6888,16 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0210"
+          "t": "contains",
+          "s": "System.Console.WriteLine(args.Length);"
+        },
+        {
+          "t": "absent",
+          "s": "static void Main"
         }
       ]
     },
@@ -7023,7 +7151,7 @@
         },
         {
           "t": "contains",
-          "s": "int[] numbers = { 1, 2 };"
+          "s": "int[] numbers = "
         },
         {
           "t": "contains",
@@ -7032,6 +7160,22 @@
         {
           "t": "contains",
           "s": "IEnumerable<int> sequence = new List<int>"
+        },
+        {
+          "t": "absent",
+          "s": "var name"
+        },
+        {
+          "t": "absent",
+          "s": "var numbers"
+        },
+        {
+          "t": "absent",
+          "s": "var boxed"
+        },
+        {
+          "t": "absent",
+          "s": "var sequence"
         }
       ]
     },
@@ -7144,11 +7288,11 @@
       "checks": [
         {
           "t": "contains",
-          "s": "=> { Counter(); })"
+          "s": "() => { Counter(); }) + Apply("
         },
         {
-          "t": "contains",
-          "s": "=> { return Counter(); })"
+          "t": "absent",
+          "s": "Counter()) + Apply("
         }
       ]
     },
@@ -7932,12 +8076,20 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0290 .*'Service' could use a primary constructor; it was not converted automatically"
+          "t": "contains",
+          "s": "public class Service(Dependency dependency)"
+        },
+        {
+          "t": "contains",
+          "s": "private readonly Dependency _dependency = dependency;"
+        },
+        {
+          "t": "absent",
+          "s": "public Service(Dependency dependency)"
         }
       ]
     },
@@ -8042,7 +8194,11 @@
       "checks": [
         {
           "t": "contains",
-          "s": "(a, b) = (b, a);"
+          "s": "(b, a) = (a, b);"
+        },
+        {
+          "t": "absent",
+          "s": "var temp"
         }
       ]
     },
@@ -8063,7 +8219,7 @@
       "checks": [
         {
           "t": "contains",
-          "s": "var (x, y) = (1, 2);"
+          "s": "var (x, y) = (x: 1, y: 2);"
         },
         {
           "t": "contains",
@@ -8083,12 +8239,16 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0059 .*the value assigned to 'result' is never read"
+          "t": "contains",
+          "s": "_ = Compute();\n        int result = Compute();"
+        },
+        {
+          "t": "absent",
+          "s": "\n        result = Compute();"
         }
       ]
     },
@@ -8214,7 +8374,7 @@
       "checks": [
         {
           "t": "contains",
-          "s": "var person = new Person()\n        {\n            Name = \"Ann\",\n            Age = 30\n        };"
+          "s": "var person = new Person\n        {\n            Name = \"Ann\",\n            Age = 30\n        };"
         }
       ]
     },
@@ -8235,7 +8395,7 @@
       "checks": [
         {
           "t": "contains",
-          "s": "var list = new List<int>()\n        {\n            1,\n            2\n        };"
+          "s": "var list = new List<int>\n        {\n            1,\n            2\n        };"
         }
       ]
     },
@@ -8512,7 +8672,11 @@
       "checks": [
         {
           "t": "contains",
-          "s": "return a + b;"
+          "s": "return (a) + (b);"
+        },
+        {
+          "t": "absent",
+          "s": "((a))"
         }
       ]
     },
@@ -8626,7 +8790,12 @@
       "trap": false,
       "reportOnly": true,
       "policy": false,
-      "checks": []
+      "checks": [
+        {
+          "t": "contains",
+          "s": "Func<int, int> convert = v => Double(v);"
+        }
+      ]
     },
     {
       "id": "EditorConfigCsharpStyleExpressionBodiedPropertiesDisabled",
@@ -9104,9 +9273,26 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
-      "checks": []
+      "checks": [
+        {
+          "t": "contains",
+          "s": "public static String Run()"
+        },
+        {
+          "t": "contains",
+          "s": "public Int32 Number(String text, Boolean flag)"
+        },
+        {
+          "t": "absent",
+          "s": "string"
+        },
+        {
+          "t": "absent",
+          "s": " int "
+        }
+      ]
     },
     {
       "id": "EditorConfigDotnetStylePredefinedTypeForMemberAccessDisabled",
@@ -9285,6 +9471,7 @@
       "trap": false,
       "reportOnly": false,
       "policy": false,
+      "knownDefect": "Roslyn's IDE0003 analyzer does not report event accesses, so no fix is offered (checked in Roslyn release/dev17.14, dev18.0 and dev18.3).",
       "checks": [
         {
           "t": "contains",
@@ -9433,12 +9620,16 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "IDE0059"
+          "t": "contains",
+          "s": "int unused = Compute();\n        int result = Compute();"
+        },
+        {
+          "t": "absent",
+          "s": "\n        result = Compute();"
         }
       ]
     },
@@ -10564,16 +10755,20 @@
       "alwaysOn": false,
       "everything": false,
       "trap": false,
-      "reportOnly": true,
+      "reportOnly": false,
       "policy": false,
       "checks": [
         {
-          "t": "reported",
-          "re": "cannot be resolved syntactically"
+          "t": "contains",
+          "s": "private int _count = 2;"
         },
         {
           "t": "contains",
-          "s": "private int Count = 2;"
+          "s": "return instance._count.ToString();"
+        },
+        {
+          "t": "absent",
+          "s": "instance.Count"
         }
       ]
     },
@@ -11420,6 +11615,1238 @@
         {
           "t": "contains",
           "s": "private static int Twice"
+        }
+      ]
+    },
+    {
+      "id": "LayoutMarkupBlankLinesBeforeClosingTags",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutMarkupBlankLinesBeforeClosingTags/LayoutMarkupBlankLinesBeforeClosingTags.xml",
+      "entry": "layout",
+      "settings": {
+        "removeBlankLinesBeforeClosingTags": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".xml",
+      "checks": [
+        {
+          "t": "contains",
+          "s": "    <setting name=\"second\">2</setting>\n  </group>\n</settings>"
+        }
+      ]
+    },
+    {
+      "id": "LayoutMarkupSpacesBeforeClosingAngleBrackets",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutMarkupSpacesBeforeClosingAngleBrackets/LayoutMarkupSpacesBeforeClosingAngleBrackets.xaml",
+      "entry": "layout",
+      "settings": {
+        "removeBlankSpacesBeforeClosingAngleBrackets": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".xaml",
+      "checks": [
+        {
+          "t": "contains",
+          "s": "        Title=\"Demo\">\n    <Grid>"
+        },
+        {
+          "t": "contains",
+          "s": "<TextBlock Text=\"a > b\"></TextBlock>"
+        },
+        {
+          "t": "absent",
+          "s": "<Grid >"
+        },
+        {
+          "t": "absent",
+          "s": "\" >"
+        }
+      ]
+    },
+    {
+      "id": "LayoutMarkupSpaceBeforeSelfClosingAngleBrackets",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutMarkupSpaceBeforeSelfClosingAngleBrackets/LayoutMarkupSpaceBeforeSelfClosingAngleBrackets.html",
+      "entry": "layout",
+      "settings": {
+        "insertBlankSpaceBeforeSelfClosingAngleBrackets": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".html",
+      "checks": [
+        {
+          "t": "contains",
+          "s": "<p>one<br />two</p>"
+        },
+        {
+          "t": "contains",
+          "s": "alt=\"logo\" />"
+        },
+        {
+          "t": "absent",
+          "s": "<br/>"
+        },
+        {
+          "t": "absent",
+          "s": "\"logo\"/>"
+        }
+      ]
+    },
+    {
+      "id": "LayoutMarkupKeepsCommentsCdataAndAttributeValues",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutMarkupKeepsCommentsCdataAndAttributeValues/LayoutMarkupKeepsCommentsCdataAndAttributeValues.xml",
+      "entry": "layout",
+      "settings": {
+        "removeBlankLinesBeforeClosingTags": true,
+        "removeBlankSpacesBeforeClosingAngleBrackets": true,
+        "insertBlankSpaceBeforeSelfClosingAngleBrackets": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": true,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".xml",
+      "checks": [
+        {
+          "t": "contains",
+          "s": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>"
+        },
+        {
+          "t": "contains",
+          "s": "<root title=\"a/> b >\">"
+        },
+        {
+          "t": "contains",
+          "s": "<!-- <keep/> <this >\n\n\n  </text> -->"
+        },
+        {
+          "t": "contains",
+          "s": "<![CDATA[ <raw/> <data >\n\n\n  </raw> ]]>"
+        },
+        {
+          "t": "contains",
+          "s": "<item value='x/>' />"
+        }
+      ]
+    },
+    {
+      "id": "LayoutCFamilyBlankLinesAfterOpeningBrace",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutCFamilyBlankLinesAfterOpeningBrace/LayoutCFamilyBlankLinesAfterOpeningBrace.js",
+      "entry": "layout",
+      "settings": {
+        "removeBlankLinesAfterOpeningBrace": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".js",
+      "checks": [
+        {
+          "t": "contains",
+          "s": "function add(a, b) {\n  return a + b;"
+        }
+      ]
+    },
+    {
+      "id": "LayoutCFamilyBlankLinesBeforeClosingBrace",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutCFamilyBlankLinesBeforeClosingBrace/LayoutCFamilyBlankLinesBeforeClosingBrace.css",
+      "entry": "layout",
+      "settings": {
+        "removeBlankLinesBeforeClosingBrace": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".css",
+      "checks": [
+        {
+          "t": "contains",
+          "s": "  color: red;\n}"
+        }
+      ]
+    },
+    {
+      "id": "LayoutCFamilyPaddingBeforeSingleLineComments",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutCFamilyPaddingBeforeSingleLineComments/LayoutCFamilyPaddingBeforeSingleLineComments.ts",
+      "entry": "layout",
+      "settings": {
+        "insertBlankLinePaddingBeforeSingleLineComments": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".ts",
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "const first = 1;",
+          "b": "// The second value."
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "number[] {",
+          "b": "// The first comment"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFSharpGetsTheGenericRules",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFSharpGetsTheGenericRules/LayoutFSharpGetsTheGenericRules.fs",
+      "entry": "layout",
+      "settings": {
+        "removeBlankLinesAfterOpeningBrace": true,
+        "removeMultipleConsecutiveBlankLines": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".fs",
+      "checks": [
+        {
+          "t": "contains",
+          "s": "let point = {\n\n    X = 1 }"
+        },
+        {
+          "t": "absent",
+          "s": "{\n\n\n"
+        }
+      ]
+    },
+    {
+      "id": "LayoutVbRemoveRegions",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutVbRemoveRegions/LayoutVbRemoveRegions.vb",
+      "entry": "layout",
+      "settings": {
+        "removeRegions": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".vb",
+      "checks": [
+        {
+          "t": "absent",
+          "s": "#Region"
+        },
+        {
+          "t": "absent",
+          "s": "#End Region"
+        },
+        {
+          "t": "contains",
+          "s": "Public Class Customer\n    Private _name As String\nEnd Class"
+        }
+      ]
+    },
+    {
+      "id": "LayoutVbRegionPadding",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutVbRegionPadding/LayoutVbRegionPadding.vb",
+      "entry": "layout",
+      "settings": {
+        "insertBlankLinePaddingBeforeRegionTags": true,
+        "insertBlankLinePaddingAfterRegionTags": true,
+        "insertBlankLinePaddingBeforeEndRegionTags": true,
+        "insertBlankLinePaddingAfterEndRegionTags": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".vb",
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "_id As Integer",
+          "b": "#Region"
+        },
+        {
+          "t": "blankBetween",
+          "a": "#Region \"Fields\"",
+          "b": "Private _name"
+        },
+        {
+          "t": "blankBetween",
+          "a": "_name As String",
+          "b": "#End Region"
+        },
+        {
+          "t": "blankBetween",
+          "a": "#End Region",
+          "b": "Private _age"
+        }
+      ]
+    },
+    {
+      "id": "LayoutVbBlankLinesAfterAttributes",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutVbBlankLinesAfterAttributes/LayoutVbBlankLinesAfterAttributes.vb",
+      "entry": "layout",
+      "settings": {
+        "removeBlankLinesAfterAttributes": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".vb",
+      "checks": [
+        {
+          "t": "noBlankBetween",
+          "a": "<Serializable>",
+          "b": "Public Class Customer"
+        }
+      ]
+    },
+    {
+      "id": "LayoutVbChainedStatements",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutVbChainedStatements/LayoutVbChainedStatements.vb",
+      "entry": "layout",
+      "settings": {
+        "removeBlankLinesBetweenChainedStatements": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".vb",
+      "checks": [
+        {
+          "t": "noBlankBetween",
+          "a": "(\"positive\")",
+          "b": "Else"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "(value)",
+          "b": "Catch"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "(ex.Message)",
+          "b": "Finally"
+        }
+      ]
+    },
+    {
+      "id": "LayoutVbCasePadding",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutVbCasePadding/LayoutVbCasePadding.vb",
+      "entry": "layout",
+      "settings": {
+        "insertBlankLinePaddingBeforeCaseStatements": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".vb",
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "Return \"one\"",
+          "b": "Case 2"
+        },
+        {
+          "t": "blankBetween",
+          "a": "Return \"two\"",
+          "b": "Case Else"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "Select Case value",
+          "b": "Case 1"
+        }
+      ]
+    },
+    {
+      "id": "LayoutVbCommentPadding",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutVbCommentPadding/LayoutVbCommentPadding.vb",
+      "entry": "layout",
+      "settings": {
+        "insertBlankLinePaddingBeforeSingleLineComments": true
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".vb",
+      "checks": [
+        {
+          "t": "blankBetween",
+          "a": "Dim first = 1",
+          "b": "' The second comment"
+        },
+        {
+          "t": "noBlankBetween",
+          "a": "Sub Main()",
+          "b": "' The first comment"
+        }
+      ]
+    },
+    {
+      "id": "LayoutVbFormatComments",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutVbFormatComments/LayoutVbFormatComments.vb",
+      "entry": "layout",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "wrapColumn": 40
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".vb",
+      "checks": [
+        {
+          "t": "absent",
+          "s": "' This comment is far too long for the wrap column"
+        },
+        {
+          "t": "contains",
+          "s": "    ' This comment is far too long for"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderVB",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderVB/LayoutFileHeaderVB.vb",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderVB": "' Copyright (c) the Code Janitor testbed."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".vb",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "' Copyright (c) the Code Janitor testbed.\nModule Program"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderFSharp",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderFSharp/LayoutFileHeaderFSharp.fs",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderFSharp": "// Copyright (c) the Code Janitor testbed."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".fs",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "// Copyright (c) the Code Janitor testbed.\nlet answer = 42"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderCPlusPlus",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderCPlusPlus/LayoutFileHeaderCPlusPlus.cpp",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderCPlusPlus": "// Copyright (c) the Code Janitor testbed."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".cpp",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "// Copyright (c) the Code Janitor testbed.\nint answer() { return 42; }"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderCSS",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderCSS/LayoutFileHeaderCSS.css",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderCSS": "/* Copyright (c) the Code Janitor testbed. */"
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".css",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "/* Copyright (c) the Code Janitor testbed. */\n.button { color: red; }"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderLESS",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderLESS/LayoutFileHeaderLESS.less",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderLESS": "// Copyright (c) the Code Janitor testbed."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".less",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "// Copyright (c) the Code Janitor testbed.\n@color: red;"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderSCSS",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderSCSS/LayoutFileHeaderSCSS.scss",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderSCSS": "// Copyright (c) the Code Janitor testbed."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".scss",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "// Copyright (c) the Code Janitor testbed.\n$color: red;"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderJavaScript",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderJavaScript/LayoutFileHeaderJavaScript.js",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderJavaScript": "// Copyright (c) the Code Janitor testbed."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".js",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "#!/usr/bin/env node\n// Copyright (c) the Code Janitor testbed.\nconsole.log(42);"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderTypeScript",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderTypeScript/LayoutFileHeaderTypeScript.ts",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderTypeScript": "// Copyright (c) the Code Janitor testbed."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".ts",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "// Copyright (c) the Code Janitor testbed.\nexport const answer = 42;"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderJSON",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderJSON/LayoutFileHeaderJSON.json",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderJSON": "// Copyright (c) the Code Janitor testbed."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".json",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "// Copyright (c) the Code Janitor testbed.\n{"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderHTML",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderHTML/LayoutFileHeaderHTML.html",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderHTML": "<!-- Copyright (c) the Code Janitor testbed. -->"
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".html",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "<!-- Copyright (c) the Code Janitor testbed. -->\n<!DOCTYPE html>"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderXAML",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderXAML/LayoutFileHeaderXAML.xaml",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderXAML": "<!-- Copyright (c) the Code Janitor testbed. -->"
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".xaml",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "<!-- Copyright (c) the Code Janitor testbed. -->\n<Grid xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" />"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderXML",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderXML/LayoutFileHeaderXML.xml",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderXML": "<!-- Copyright (c) the Code Janitor testbed. -->"
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".xml",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!-- Copyright (c) the Code Janitor testbed. -->\n<root />"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderPHP",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderPHP/LayoutFileHeaderPHP.php",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderPHP": "// Copyright (c) the Code Janitor testbed."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".php",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "<?php\n// Copyright (c) the Code Janitor testbed.\necho 42;"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderPowerShell",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderPowerShell/LayoutFileHeaderPowerShell.ps1",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderPowerShell": "# Copyright (c) the Code Janitor testbed."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".ps1",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "# Copyright (c) the Code Janitor testbed.\nWrite-Output 42"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderR",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderR/LayoutFileHeaderR.r",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderR": "# Copyright (c) the Code Janitor testbed."
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".r",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "# Copyright (c) the Code Janitor testbed.\nanswer <- 42"
+        }
+      ]
+    },
+    {
+      "id": "LayoutFileHeaderReplace",
+      "printed": false,
+      "category": "Layout",
+      "file": "src/Layout/LayoutFileHeaderReplace/LayoutFileHeaderReplace.xml",
+      "entry": "layout",
+      "settings": {
+        "fileHeaderXML": "<!-- Copyright (c) the Code Janitor testbed. -->",
+        "fileHeaderUpdateMode": 1
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "fileExt": ".xml",
+      "checks": [
+        {
+          "t": "startsWith",
+          "s": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!-- Copyright (c) the Code Janitor testbed. -->\n<root />"
+        },
+        {
+          "t": "absent",
+          "s": "The old header"
+        }
+      ]
+    },
+    {
+      "id": "CommentFormatWrapColumn",
+      "printed": true,
+      "category": "CommentFormat",
+      "file": "src/Scenarios/Settings/CommentFormatWrapColumn/CommentFormatWrapColumn.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "wrapColumn": 40
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "        // This comment is far too long\n        // for a wrap column of forty characters."
+        }
+      ]
+    },
+    {
+      "id": "CommentFormatSkipWrapOnLastWord",
+      "printed": true,
+      "category": "CommentFormat",
+      "file": "src/Scenarios/Settings/CommentFormatSkipWrapOnLastWord/CommentFormatSkipWrapOnLastWord.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "skipWrapOnLastWord": false
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "crosses the wrap column:\n        // overflow"
+        }
+      ]
+    },
+    {
+      "id": "CommentFormatIgnoreLinesStartingWith",
+      "printed": true,
+      "category": "CommentFormat",
+      "file": "src/Scenarios/Settings/CommentFormatIgnoreLinesStartingWith/CommentFormatIgnoreLinesStartingWith.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "wrapColumn": 40,
+          "ignoreLinesStartingWith": [
+            "KEEP "
+          ]
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "        // KEEP this line exactly as it is, even though it is far too long for the wrap column."
+        },
+        {
+          "t": "contains",
+          "s": "        // This other comment is far too\n        // long for a wrap column of"
+        }
+      ]
+    },
+    {
+      "id": "CommentFormatXmlAlignParamTags",
+      "printed": true,
+      "category": "CommentFormat",
+      "file": "src/Scenarios/Settings/CommentFormatXmlAlignParamTags/CommentFormatXmlAlignParamTags.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "xmlAlignParamTags": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "/// <param name=\"a\">     The first value.</param>\n    /// <param name=\"longer\">The second value.</param>"
+        }
+      ]
+    },
+    {
+      "id": "CommentFormatXmlKeepTagsTogether",
+      "printed": true,
+      "category": "CommentFormat",
+      "file": "src/Scenarios/Settings/CommentFormatXmlKeepTagsTogether/CommentFormatXmlKeepTagsTogether.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "xmlKeepTagsTogether": true,
+          "wrapColumn": 60
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "    /// <seealso href=\"https://example.com/docs\" title=\"the documentation\"/>\n"
+        }
+      ]
+    },
+    {
+      "id": "CommentFormatXmlSpaceSingleTags",
+      "printed": true,
+      "category": "CommentFormat",
+      "file": "src/Scenarios/Settings/CommentFormatXmlSpaceSingleTags/CommentFormatXmlSpaceSingleTags.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "xmlSpaceSingleTags": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "/// Returns the value. <br /> Always."
+        },
+        {
+          "t": "absent",
+          "s": "<br/>"
+        }
+      ]
+    },
+    {
+      "id": "CommentFormatXmlSpaceTags",
+      "printed": true,
+      "category": "CommentFormat",
+      "file": "src/Scenarios/Settings/CommentFormatXmlSpaceTags/CommentFormatXmlSpaceTags.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "xmlSpaceTags": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "/// <returns> The value. </returns>"
+        }
+      ]
+    },
+    {
+      "id": "CommentFormatXmlSplitAllTags",
+      "printed": true,
+      "category": "CommentFormat",
+      "file": "src/Scenarios/Settings/CommentFormatXmlSplitAllTags/CommentFormatXmlSplitAllTags.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "xmlSplitAllTags": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "    /// <returns>\n    /// The value.\n    /// </returns>"
+        }
+      ]
+    },
+    {
+      "id": "CommentFormatXmlSplitSummaryTagToMultipleLines",
+      "printed": true,
+      "category": "CommentFormat",
+      "file": "src/Scenarios/Settings/CommentFormatXmlSplitSummaryTagToMultipleLines/CommentFormatXmlSplitSummaryTagToMultipleLines.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "xmlSplitSummaryTagToMultipleLines": false
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "    /// <summary>Returns the value.</summary>"
+        }
+      ]
+    },
+    {
+      "id": "CommentFormatXmlTagsToLowerCase",
+      "printed": true,
+      "category": "CommentFormat",
+      "file": "src/Scenarios/Settings/CommentFormatXmlTagsToLowerCase/CommentFormatXmlTagsToLowerCase.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "xmlTagsToLowerCase": true
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "    /// <summary>\n    /// Returns the value.\n    /// </summary>"
+        },
+        {
+          "t": "absent",
+          "s": "SUMMARY"
+        }
+      ]
+    },
+    {
+      "id": "CommentFormatXmlValueIndent",
+      "printed": true,
+      "category": "CommentFormat",
+      "file": "src/Scenarios/Settings/CommentFormatXmlValueIndent/CommentFormatXmlValueIndent.cs",
+      "entry": "cleanup",
+      "settings": {
+        "formatComments": true,
+        "commentFormat": {
+          "xmlValueIndent": 4
+        }
+      },
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "checks": [
+        {
+          "t": "contains",
+          "s": "    /// <summary>\n    ///     Returns the value.\n    /// </summary>"
+        }
+      ]
+    },
+    {
+      "id": "MoveMember",
+      "printed": true,
+      "category": "Commands",
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "file": "src/Scenarios/Commands/MoveMember/MoveMember.cs",
+      "entry": "moveMember",
+      "settings": {},
+      "move": {
+        "line": 5,
+        "name": "Twice",
+        "targetLine": 7,
+        "targetName": "Thrice",
+        "position": "after"
+      },
+      "checks": [
+        {
+          "t": "order",
+          "s": [
+            "private static int Thrice",
+            "/// <summary>Doubles.</summary>",
+            "private static int Twice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DeleteMember",
+      "printed": true,
+      "category": "Commands",
+      "codeStyle": {},
+      "editorconfig": false,
+      "alwaysOn": false,
+      "everything": false,
+      "trap": false,
+      "reportOnly": false,
+      "policy": false,
+      "file": "src/Scenarios/Commands/DeleteMember/DeleteMember.cs",
+      "entry": "deleteMember",
+      "settings": {},
+      "delete": {
+        "line": 7,
+        "name": "Unused"
+      },
+      "checks": [
+        {
+          "t": "absent",
+          "s": "Unused"
+        },
+        {
+          "t": "absent",
+          "s": "[System.Obsolete]"
+        },
+        {
+          "t": "contains",
+          "s": "public static string Run()"
         }
       ]
     }

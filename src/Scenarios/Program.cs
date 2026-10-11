@@ -78,6 +78,7 @@ public static class Program
         Run("InsertBlankLinePaddingAfterNamespaces", Testbed.Settings.InsertBlankLinePaddingAfterNamespaces.InsertBlankLinePaddingAfterNamespaces.Run);
         Run("InsertBlankLinePaddingBeforePropertiesMultiLine", Testbed.Settings.InsertBlankLinePaddingBeforePropertiesMultiLine.InsertBlankLinePaddingBeforePropertiesMultiLine.Run);
         Run("InsertBlankLinePaddingAfterPropertiesMultiLine", Testbed.Settings.InsertBlankLinePaddingAfterPropertiesMultiLine.InsertBlankLinePaddingAfterPropertiesMultiLine.Run);
+        Run("InsertBlankLinePaddingBetweenPropertiesMultiLineAccessors", Testbed.Settings.InsertBlankLinePaddingBetweenPropertiesMultiLineAccessors.InsertBlankLinePaddingBetweenPropertiesMultiLineAccessors.Run);
         Run("InsertBlankLinePaddingBeforePropertiesSingleLine", Testbed.Settings.InsertBlankLinePaddingBeforePropertiesSingleLine.InsertBlankLinePaddingBeforePropertiesSingleLine.Run);
         Run("InsertBlankLinePaddingAfterPropertiesSingleLine", Testbed.Settings.InsertBlankLinePaddingAfterPropertiesSingleLine.InsertBlankLinePaddingAfterPropertiesSingleLine.Run);
         Run("InsertBlankLinePaddingBeforeStructs", Testbed.Settings.InsertBlankLinePaddingBeforeStructs.InsertBlankLinePaddingBeforeStructs.Run);
@@ -102,7 +103,6 @@ public static class Program
         Run("ConvertToFileScopedNamespace", Testbed.Settings.ConvertToFileScopedNamespace.ConvertToFileScopedNamespace.Run);
         Run("ConvertToVarWhenApparent", Testbed.Settings.ConvertToVarWhenApparent.ConvertToVarWhenApparent.Run);
         Run("MakeFieldsReadonlyWhenSafe", Testbed.Settings.MakeFieldsReadonlyWhenSafe.MakeFieldsReadonlyWhenSafe.Run);
-        Run("SealClassesWhenSafe", Testbed.Settings.SealClassesWhenSafe.SealClassesWhenSafe.Run);
         Run("InsertBlankLineBeforeReturnAndThrowStatements", Testbed.Settings.InsertBlankLineBeforeReturnAndThrowStatements.InsertBlankLineBeforeReturnAndThrowStatements.Run);
         Run("ConvertToCollectionExpressions", Testbed.Settings.ConvertToCollectionExpressions.ConvertToCollectionExpressions.Run);
         Run("ReuseJsonSerializerOptionsForCA1869", Testbed.Settings.ReuseJsonSerializerOptionsForCA1869.ReuseJsonSerializerOptionsForCA1869.Run);
@@ -117,6 +117,17 @@ public static class Program
         Run("UpdateSingleLineMethods", Testbed.Settings.UpdateSingleLineMethods.UpdateSingleLineMethods.Run);
         Run("UpdateAccessorsToBothBeSingleLineOrMultiLine", Testbed.Settings.UpdateAccessorsToBothBeSingleLineOrMultiLine.UpdateAccessorsToBothBeSingleLineOrMultiLine.Run);
         Run("FormatComments", Testbed.Settings.FormatComments.FormatComments.Run);
+        Run("CommentFormatWrapColumn", Testbed.Settings.CommentFormatWrapColumn.CommentFormatWrapColumn.Run);
+        Run("CommentFormatSkipWrapOnLastWord", Testbed.Settings.CommentFormatSkipWrapOnLastWord.CommentFormatSkipWrapOnLastWord.Run);
+        Run("CommentFormatIgnoreLinesStartingWith", Testbed.Settings.CommentFormatIgnoreLinesStartingWith.CommentFormatIgnoreLinesStartingWith.Run);
+        Run("CommentFormatXmlAlignParamTags", Testbed.Settings.CommentFormatXmlAlignParamTags.CommentFormatXmlAlignParamTags.Run);
+        Run("CommentFormatXmlKeepTagsTogether", Testbed.Settings.CommentFormatXmlKeepTagsTogether.CommentFormatXmlKeepTagsTogether.Run);
+        Run("CommentFormatXmlSpaceSingleTags", Testbed.Settings.CommentFormatXmlSpaceSingleTags.CommentFormatXmlSpaceSingleTags.Run);
+        Run("CommentFormatXmlSpaceTags", Testbed.Settings.CommentFormatXmlSpaceTags.CommentFormatXmlSpaceTags.Run);
+        Run("CommentFormatXmlSplitAllTags", Testbed.Settings.CommentFormatXmlSplitAllTags.CommentFormatXmlSplitAllTags.Run);
+        Run("CommentFormatXmlSplitSummaryTagToMultipleLines", Testbed.Settings.CommentFormatXmlSplitSummaryTagToMultipleLines.CommentFormatXmlSplitSummaryTagToMultipleLines.Run);
+        Run("CommentFormatXmlTagsToLowerCase", Testbed.Settings.CommentFormatXmlTagsToLowerCase.CommentFormatXmlTagsToLowerCase.Run);
+        Run("CommentFormatXmlValueIndent", Testbed.Settings.CommentFormatXmlValueIndent.CommentFormatXmlValueIndent.Run);
         Run("RemoveRegions", Testbed.Settings.RemoveRegions.RemoveRegions.Run);
         Run("RemoveByteOrderMark", Testbed.Settings.RemoveByteOrderMark.RemoveByteOrderMark.Run);
         Run("RemoveEndOfLineWhitespace", Testbed.Settings.RemoveEndOfLineWhitespace.RemoveEndOfLineWhitespace.Run);
@@ -155,7 +166,6 @@ public static class Program
         Run("EditorConfigRequireAccessibilityModifiers", Testbed.EditorConfig.EditorConfigRequireAccessibilityModifiers.EditorConfigRequireAccessibilityModifiers.Run);
         Run("EditorConfigReadonlyField", Testbed.EditorConfig.EditorConfigReadonlyField.EditorConfigReadonlyField.Run);
         Run("EditorConfigCA1822MakeMemberStatic", Testbed.EditorConfig.EditorConfigCA1822MakeMemberStatic.EditorConfigCA1822MakeMemberStatic.Run);
-        Run("EditorConfigCA1852SealInternalType", Testbed.EditorConfig.EditorConfigCA1852SealInternalType.EditorConfigCA1852SealInternalType.Run);
         Run("EditorConfigCA1507UseNameOf", Testbed.EditorConfig.EditorConfigCA1507UseNameOf.EditorConfigCA1507UseNameOf.Run);
         Run("EditorConfigIDE0005RemoveDuplicateUsings", Testbed.EditorConfig.EditorConfigIDE0005RemoveDuplicateUsings.EditorConfigIDE0005RemoveDuplicateUsings.Run);
         Run("EditorConfigIDE0051RemoveUnusedPrivateMember", Testbed.EditorConfig.EditorConfigIDE0051RemoveUnusedPrivateMember.EditorConfigIDE0051RemoveUnusedPrivateMember.Run);
@@ -472,6 +482,8 @@ public static class Program
         Run("SortLines", Testbed.Commands.SortLines.SortLines.Run);
         Run("InsertRegion", Testbed.Commands.InsertRegion.InsertRegion.Run);
         Run("RemoveRegion", Testbed.Commands.RemoveRegion.RemoveRegion.Run);
+        Run("MoveMember", Testbed.Commands.MoveMember.MoveMember.Run);
+        Run("DeleteMember", Testbed.Commands.DeleteMember.DeleteMember.Run);
 
         return 0;
     }

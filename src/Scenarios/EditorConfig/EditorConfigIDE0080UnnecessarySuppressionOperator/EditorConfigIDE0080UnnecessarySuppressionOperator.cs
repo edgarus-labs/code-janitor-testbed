@@ -4,8 +4,9 @@ public class EditorConfigIDE0080UnnecessarySuppressionOperator
 {
     public static string Run()
     {
-        string text = "a"!;
+        object value = "a";
+        bool isText = value !is string;
 
-        return text;
+        return isText.ToString();
     }
 }

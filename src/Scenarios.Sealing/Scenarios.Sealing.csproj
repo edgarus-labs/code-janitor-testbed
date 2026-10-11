@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Class sealing is only safe where no build configuration can see other code: the strict rule refuses to seal
+    anything in a project (or a project referencing it) with inactive #if code. These scenarios therefore live in a
+    library without preprocessor blocks that nothing references; they are built, not run.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>

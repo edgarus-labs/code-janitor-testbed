@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <setting name="first">1</setting>
+  <group>
+    <setting name="second">2</setting>
+
+
+  </group>
+
+</settings>

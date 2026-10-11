@@ -3,4 +3,5 @@
   <Project Path="src/Scenarios.Razor/Scenarios.Razor.csproj" />
   <Project Path="src/Scenarios.TopLevel/Scenarios.TopLevel.csproj" />
   <Project Path="src/Scenarios.MainMethod/Scenarios.MainMethod.csproj" />
+  <Project Path="src/Scenarios.Sealing/Scenarios.Sealing.csproj" />
 </Solution>
