@@ -1,14 +1,13 @@
 namespace Testbed.EditorConfig.EditorConfigPreserveSingleLineBlocks;
 
-using System.Linq;
-
 public class EditorConfigPreserveSingleLineBlocks
 {
+    public int Count { get; set; }
+
     public static string Run()
     {
-        var n = 1;
-        if (n > 0) { n++; }
+        var instance = new EditorConfigPreserveSingleLineBlocks { Count = 2 };
 
-        return n.ToString();
+        return instance.Count.ToString();
     }
 }
